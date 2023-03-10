@@ -5,21 +5,18 @@ import java.util.Random;
 public class Account {
 
     //Campi
-    private int accountNumber;
+    private final int accountNumber;
     private String clientName;
     private double balance;
 
     //Costruttore
 
-    public Account(){
-        balance = 0.0;
-    }
-
     public Account(String clientName) {
         this.clientName = clientName;
         Random rnd = new Random();
         accountNumber = rnd.nextInt(1, 1000);
-        balance = 0.0;
+
+        balance = 0.00;
     }
 
     //Getter e setter
@@ -56,7 +53,7 @@ public class Account {
         }
     }
 
-    public boolean withdrawFunds(int amount){
+    public boolean withdrawFunds(double amount){
         if(amount < balance){
             balance-= amount;
             return true;
@@ -64,5 +61,6 @@ public class Account {
             return false;
         }
     }
+
 
 }
