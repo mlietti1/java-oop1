@@ -18,7 +18,7 @@ public class Account {
     public Account(String clientName) {
         this.clientName = clientName;
         Random rnd = new Random();
-        accountNumber = rnd.nextInt(1, 100000);
+        accountNumber = rnd.nextInt(1, 1000);
         balance = 0.0;
     }
 
