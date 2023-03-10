@@ -16,6 +16,6 @@ public class Main {
         pomodori.setPrice(3.45);
 
 
-        System.out.println("Product name: " + pomodori.getName() + ", price: " + pomodori.getFinalPrice() + ", code: " + spaghetti.getCode());
+        System.out.println("Product name: " + pomodori.getName() + ", price: " + pomodori.getFinalPrice() + ", code: " + pomodori.getCode());
     }
 }
