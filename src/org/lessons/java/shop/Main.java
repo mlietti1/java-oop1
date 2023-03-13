@@ -8,7 +8,7 @@ public class Main {
         spaghetti.setDescription("tempo di cottura 10min");
 
         System.out.println(spaghetti);
-        System.out.println("Product name: " + spaghetti.getName() + ", price: " + spaghetti.getPrice() + ", final price: " + spaghetti.getFinalPrice() + ", code: " + spaghetti.getCode() + ", description: " + spaghetti.getDescription());
+        System.out.println("Product name: " + spaghetti.getName() + ", price: " + spaghetti.getPrice() + ", final price: " + spaghetti.getFinalPrice() + ", code: " + spaghetti.getFormattedCode() + ", description: " + spaghetti.getDescription());
         System.out.println(spaghetti.getFullName());
 
         Product pomodori = new Product();
@@ -16,6 +16,6 @@ public class Main {
         pomodori.setPrice(3.45);
 
 
-        System.out.println("Product name: " + pomodori.getName() + ", price: " + pomodori.getFinalPrice() + ", code: " + pomodori.getCode());
+        System.out.println("Product name: " + pomodori.getName() + ", price: " + pomodori.getFinalPrice() + ", code: " + pomodori.getFormattedCode());
     }
 }

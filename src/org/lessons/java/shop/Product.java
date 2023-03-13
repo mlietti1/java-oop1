@@ -13,13 +13,13 @@ public class Product {
     private static final double IVA = 0.21;
 
     // Costruttori
-    public Product(){
+    public Product() {
         Random rand = new Random();
         code = rand.nextInt(1, 10000000);
         name = "New product";
     }
 
-    public Product(String name){
+    public Product(String name) {
         Random rand = new Random();
         code = rand.nextInt(1, 10000000);
         this.name = name;
@@ -70,12 +70,22 @@ public class Product {
                 '}';
     }
 
-    public String getFinalPrice(){
+    public String getFinalPrice() {
         DecimalFormat decimalFormat = new DecimalFormat("##.00");
         return decimalFormat.format(price * (1 + IVA));
     }
 
-    public String getFullName(){
+    public String getFullName() {
         return name + "-" + code;
     }
+
+
+    public String getFormattedCode() {
+        String codeString = String.valueOf(code);
+        while (codeString.length() < 8) {
+            codeString = "0" + codeString;
+        }
+        return codeString;
+    }
+
 }

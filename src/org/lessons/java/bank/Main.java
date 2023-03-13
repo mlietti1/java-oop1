@@ -9,7 +9,7 @@ public class Main {
         String name = scan.nextLine();
         Account account = new Account(name);
 
-        int option;
+        String option;
 
         System.out.println("Hello " + account.getClientName() + "! Account created.");
 
@@ -19,48 +19,48 @@ public class Main {
             System.out.println("2 - Make a withdrawal");
             System.out.println("3 - Account info");
             System.out.println("4 - Exit");
-            option = Integer.parseInt(scan.nextLine());
+            option = scan.nextLine();
 
-            while(option != 1 && option != 2 && option != 3 && option != 4) {
+            while (option != "1" && option != "2" && option != "3" && option != "4") {
                 System.out.println("Command not found");
                 System.out.println("Please enter 1 for Deposits, 2 for Withdrawals or 3 to Exit");
-                option = Integer.parseInt(scan.nextLine());
+                option = scan.nextLine();
             }
 
-            if(option == 1){
+            if (option == "1") {
                 System.out.println("How much would you like to deposit?");
                 double amount = Integer.parseInt(scan.nextLine());
                 while (amount < 1) {
                     System.out.println("The amount must be positive. Try again: ");
                     amount = Integer.parseInt(scan.nextLine());
                 }
-                if(account.depositFunds(amount)){
+                if (account.depositFunds(amount)) {
                     System.out.println("Deposit was successful. Your current balance is: " + account.getBalance() + " €");
-                }else{
+                } else {
                     System.out.println("Deposit unsuccessful.");
                 }
-            }else if(option == 2){
+            } else if (option == "2") {
                 System.out.println("How much would you like to draw?");
                 double amount = Integer.parseInt(scan.nextLine());
                 while (amount < 1) {
                     System.out.println("The amount must be positive. Try again: ");
                     amount = Integer.parseInt(scan.nextLine());
                 }
-                if(account.withdrawFunds(amount)){
+                if (account.withdrawFunds(amount)) {
                     System.out.println("Withdrawal was successful. Your current balance is: " + account.getBalance() + " €");
-                }else{
+                } else {
                     System.out.println("Withdrawal unsuccessful.");
                 }
-            }else if(option == 3){
+            } else if (option == "3") {
                 System.out.println("Client name: " + account.getClientName());
                 System.out.println("Account Number: " + account.getAccountNumber());
                 System.out.println("Balance: " + account.getBalance() + " €");
-            }else{
+            } else {
                 System.out.println("Goodbye!");
             }
 
         }
-        while (option != 4);
+        while (option != "4");
 
     }
 }
