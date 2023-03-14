@@ -21,13 +21,13 @@ public class Main {
             System.out.println("4 - Exit");
             option = scan.nextLine();
 
-            while (option != "1" && option != "2" && option != "3" && option != "4") {
+            while (!option.equals("1") && !option.equals("2") && !option.equals("3") && !option.equals("4")) {
                 System.out.println("Command not found");
-                System.out.println("Please enter 1 for Deposits, 2 for Withdrawals or 3 to Exit");
+                System.out.println("Please enter 1 for Deposits, 2 for Withdrawals, 3 for account info and 4 to Exit");
                 option = scan.nextLine();
             }
 
-            if (option == "1") {
+            if (option.equals("1")) {
                 System.out.println("How much would you like to deposit?");
                 double amount = Integer.parseInt(scan.nextLine());
                 while (amount < 1) {
@@ -39,7 +39,7 @@ public class Main {
                 } else {
                     System.out.println("Deposit unsuccessful.");
                 }
-            } else if (option == "2") {
+            } else if (option.equals("2")) {
                 System.out.println("How much would you like to draw?");
                 double amount = Integer.parseInt(scan.nextLine());
                 while (amount < 1) {
@@ -51,7 +51,7 @@ public class Main {
                 } else {
                     System.out.println("Withdrawal unsuccessful.");
                 }
-            } else if (option == "3") {
+            } else if (option.equals("3")) {
                 System.out.println("Client name: " + account.getClientName());
                 System.out.println("Account Number: " + account.getAccountNumber());
                 System.out.println("Balance: " + account.getBalance() + " €");
@@ -60,7 +60,7 @@ public class Main {
             }
 
         }
-        while (option != "4");
+        while (!option.equals("4"));
 
     }
 }
